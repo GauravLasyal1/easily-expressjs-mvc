@@ -2,7 +2,6 @@ import express from "express";
 import expressEjsLayouts from "express-ejs-layouts";
 import path from "path";
 
-
 import { getHomePage } from "./src/controllers/main.controller.js";
 import { getJobsListPage } from "./src/controllers/main.controller.js";
 import { getParticularJobDetails } from "./src/controllers/main.controller.js";
