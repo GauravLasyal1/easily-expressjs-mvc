@@ -11,6 +11,8 @@ import { getRegisterPage } from "./src/controllers/main.controller.js";
 import { registerUser } from "./src/controllers/main.controller.js";
 import { loginUser } from "./src/controllers/main.controller.js";
 import { logout } from "./src/controllers/main.controller.js";
+import { getApplyJobPage } from "./src/controllers/main.controller.js";
+import { applyForJob } from "./src/controllers/main.controller.js";
 
 const server = express();
 
@@ -45,6 +47,9 @@ server.get("/register", getRegisterPage);
 server.post("/register",registerUser);
 
 server.get("/logout",logout);
+
+server.get('/apply/:id', getApplyJobPage);
+server.post('/apply/:id', applyForJob);
 
 server.listen(3000, () => {
     console.log("Server is listening at port 3000...");

@@ -1,5 +1,6 @@
 import { Job } from "../models/Job.model.js";
 import { User } from "../models/User.model.js";
+import { Applicant } from "../models/Applicant.model.js"
 
 export function getHomePage(req, res)
 {
@@ -56,4 +57,18 @@ export function logout(req, res)
         if (err) console.log('Error while logging out!');
         else res.redirect('/')
     });
+}
+
+export function getApplyJobPage(req, res)
+{
+    res.render("apply-job", {jobId:req.params.id});
+}
+
+export function applyForJob(req, res)
+{
+    const jobId = req.params.id;
+    const { username, email, contactNo } = req.body;
+    Applicant.addApplicant(username, email, contactNo, null, jobId);
+    Job.incrementNoOfApplicants(jobId);
+    res.redirect("/jobs")
 }

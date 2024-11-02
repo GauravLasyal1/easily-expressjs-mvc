@@ -25,6 +25,13 @@ export class Job
             return job.id == id;
         });
     }
+    static incrementNoOfApplicants(jobId)
+    {
+        const targetJob = jobsList.find((job) => {
+            return job.id == jobId;
+        }) 
+        targetJob.applicants++;
+    }
 }
 
 let job_id_avail = 1;
