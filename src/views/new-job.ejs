@@ -1,0 +1,56 @@
+<form action="/newjob" method="post">
+    <input type="hidden" value="<%= userId %>" name="userId">
+
+    <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">Category</span>
+    <input type="text" name="category" class="form-control" placeholder="Category" aria-label="Category" aria-describedby="basic-addon1">
+    </div>
+
+    <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon2">Designation</span>
+    <input type="text" name="designation" class="form-control" placeholder="Designation" aria-label="Designation" aria-describedby="basic-addon2">
+    </div>
+    
+    <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon3">Job Location</span>
+    <input type="text" name="location" class="form-control" placeholder="Location" aria-label="Location" aria-describedby="basic-addon3">
+    </div>
+
+    <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon4">Company Name</span>
+    <input type="text" name="companyName" class="form-control" placeholder="company Name" aria-label="CompanyName" aria-describedby="basic-addon4">
+    </div>
+
+    <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon5">Salary</span>
+    <input type="text" name="salary" class="form-control" placeholder="Salary" aria-label="Salary" aria-describedby="basic-addon5">
+    </div>
+
+     <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon6">Apply By</span>
+    <input type="date" name="applyBy" class="form-control" placeholder="Apply By" aria-label="applyBy" aria-describedby="basic-addon6">
+    </div>
+
+     <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon7">Total Positions</span>
+    <input type="text" name="noOfOpenings" class="form-control" placeholder="No Of Openings" aria-label="Total Positions" aria-describedby="basic-addon7">
+    </div>
+
+    <div class="input-group mb-3">
+      <select required multiple name="skillsRequired" class="form-select" aria-label="Default select example">
+        <option selected disabled>select skills required for this job</option>
+        <option value="React">React</option>
+        <option value="NodeJs">NodeJs</option>
+        <option value="Angular">Angular</option>
+        <option value="MongoDB">MongoDB</option>
+        <option value="SQL">SQL</option>
+        <option value="Express">Express</option>
+        <option value="Java">Java</option>
+        <option value="SpringBoot">SpringBoot</option>
+        <option value="C++">C++</option>
+        <option value="Data Structures & Algo">Data Structures & Algo</option>
+      </select>
+      </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

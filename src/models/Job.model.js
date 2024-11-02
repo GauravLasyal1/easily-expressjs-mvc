@@ -15,6 +15,10 @@ export class Job
         this.applicants = applicants;
         this.userId = userId; //jobs posted by user
     }
+    static addNewJob(userId,category, designation, location, companyName, salary, applyBy, noOfOpenings, skillsRequired)
+    {
+        jobsList.push(new Job(category,designation,location,companyName,salary,applyBy,skillsRequired,noOfOpenings,(new Date().toLocaleDateString()),0,userId));
+    }
     static getJobsList()
     {
         return jobsList;

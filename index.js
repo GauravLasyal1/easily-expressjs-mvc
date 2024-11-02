@@ -3,6 +3,7 @@ import expressEjsLayouts from "express-ejs-layouts";
 import path from "path";
 import session from "express-session";
 
+import { auth } from "./src/middlewares/authentication.middleware.js";
 import { getHomePage } from "./src/controllers/main.controller.js";
 import { getJobsListPage } from "./src/controllers/main.controller.js";
 import { getParticularJobDetails } from "./src/controllers/main.controller.js";
@@ -13,6 +14,8 @@ import { loginUser } from "./src/controllers/main.controller.js";
 import { logout } from "./src/controllers/main.controller.js";
 import { getApplyJobPage } from "./src/controllers/main.controller.js";
 import { applyForJob } from "./src/controllers/main.controller.js";
+import { getNewJobPage } from "./src/controllers/main.controller.js";
+import { postNewJob } from "./src/controllers/main.controller.js";
 
 const server = express();
 
@@ -50,6 +53,9 @@ server.get("/logout",logout);
 
 server.get('/apply/:id', getApplyJobPage);
 server.post('/apply/:id', applyForJob);
+
+server.get("/newjob", auth,getNewJobPage);
+server.post("/newjob",auth,postNewJob);
 
 server.listen(3000, () => {
     console.log("Server is listening at port 3000...");

@@ -72,3 +72,17 @@ export function applyForJob(req, res)
     Job.incrementNoOfApplicants(jobId);
     res.redirect("/jobs")
 }
+
+export function getNewJobPage(req, res)
+{
+    //assumming user is logged in 
+    res.render("new-job", {userId:req.session.userId});
+}
+
+export function postNewJob(req, res)
+{
+    const { userId, category, designation, location, companyName, salary, applyBy, noOfOpenings, skillsRequired } = req.body;
+    Job.addNewJob(Number(userId), category, designation, location, companyName, Number(salary), applyBy, Number(noOfOpenings), skillsRequired)
+    res.redirect("/jobs");
+}
+
